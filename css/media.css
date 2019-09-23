@@ -1,0 +1,583 @@
+/*--Media Responsive CSS--*/
+
+@media (max-width: 800px) {
+	body,html{
+	font-size: 21px;
+	line-height: 1.5;
+}
+
+ul{
+  margin-right: 20px;
+  }
+
+
+li {
+  line-height: 1.2;
+  padding: 15px;
+ }
+
+li a:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  background: #fff;
+  transition: all 0.5s linear;  
+}
+
+	/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 800px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}
+	
+.header-menu{
+	padding: 1px;
+    position: fixed;
+}
+ 
+ .navbar-brand{
+	padding-left: 5%;
+    margin-top: 10px;
+}
+ 
+  /*--burger-button--*/
+  
+.btn-menu{
+	top: 10px;
+}
+  
+  /*-- Home Page--*/
+  
+.hero{
+	height: 600px;  
+	margin-top: -120px;
+}
+  
+.welcome{
+	font-size: 60px; 
+}
+  
+  /*--About us--*/
+  
+.post-about-us{
+	float: center;
+	width: 700px;
+}
+
+.img-about-us{
+	float: center;
+	margin-bottom: 25px; 
+	margin-right: 100px;
+}
+
+  /*-- Gallery carousel--*/
+  
+ #carousel img {
+    width:50%;
+}
+
+/*--Testimonials--*/
+
+.testimonials{
+    height: 1800px;
+}
+
+.testimonial-person{
+    float:left;
+    margin: 20px;    
+}
+
+.testimonial-text{
+	width: 360px;
+	font-size: 18px;
+}
+
+.testimonials-inner-large{
+	height: 820px;
+}
+
+/*--Contact--*/
+
+.contact{
+	height: 600px;
+}
+
+.foto-image{
+	margin-left: 25px;
+}
+
+.foto{
+	height: 400px;
+}
+
+.contact-info{
+	margin-right: 25px;
+    width: 400px;
+    height: 400px;  
+}
+
+.contact-info-title{
+	font-size: 18px;
+}
+
+.contact-info-description{
+	font-size: 24px;
+	line-height: 1.2;
+}
+
+/*--Footer--*/
+
+.social-icon img{
+	margin-left: 120px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+}
+
+@media (max-width: 768px) {
+	
+body,html{
+	font-size: 18px;
+	line-height: 1.5;
+}
+	
+/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 766px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}
+
+  /*-- Home Page--*/
+
+.welcome{
+	font-size: 55px; 
+}
+  
+  /*--About us--*/
+  
+.post-about-us{
+	float: center;
+	width: 680px;
+}
+
+.img-about-us{
+	float: center;
+	margin-bottom: 25px; 
+	margin-right: 100px;
+}
+
+  /*-- Gallery carousel--*/
+  
+ #carousel img {
+    width:48%;
+}	
+	/*--Buttons--*/	
+a.btn {
+   font-size: 21px;
+   padding: 15px;
+  border-radius: 10px;
+}
+		
+.btn-contact {
+  	width: 250px;
+}
+
+.btn-shop {
+    width: 250px;
+}	
+	
+}
+
+@media (max-width: 750px) {
+
+/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 748px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}	
+
+	/*--About us--*/
+  
+.post-about-us{
+	float: center;
+	width: 650px;
+}
+
+	 /*-- Gallery carousel--*/
+  
+ #carousel img {
+    width:45%;
+}	
+	
+	/*--Testimonials--*/
+
+.testimonials{
+    height: 1600px;
+}
+
+.testimonials-inner-large{
+	height: 630px;
+}
+
+.testimonial-person{
+    float:left;
+    margin: 30px;    
+}
+
+.testimonial-foto{
+	height: 200px;
+    width: 200px;
+}
+
+.testimonial-foto img{
+	height: 100%;
+    width: auto;
+}
+
+.testimonial-text{
+    width: 350px;
+	line-height: 1.1;
+}
+
+.testimonial-author{
+	font-size: 20px;
+	margin-left: 50px;
+}
+}
+
+@media (max-width: 720px) {
+	
+/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 718px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}
+ /*--About us--*/
+  
+.post-about-us{
+	float: center;
+	width: 620px;
+}
+
+ /*-- Gallery carousel--*/
+  
+ #carousel img {
+    width:40%;
+}	
+
+/*--Testimonials--*/
+
+.testimonial-text{
+    width: 330px;
+	line-height: 1.1;
+	font-size: 17px;
+}
+
+/*--Contact--*/
+
+.foto{
+	height: 400px;
+}
+
+.contact-info{
+	margin-right: 25px;
+    width: 350px;
+    height: 400px;  
+}
+
+.contact-info-title{
+	font-size: 16px;
+}
+
+.contact-info-description{
+	font-size: 21px;
+	line-height: 1.2;
+}
+/*--Footer--*/
+
+.social-icon img{
+	margin-left: 100px;
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+	
+}
+
+@media (max-width: 640px) {
+/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 638px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}
+/*-- Home Page--*/
+
+.logo-image{
+	width: 35%;
+	padding-left: 35%;
+	padding-top: 20%;
+	margin: 0 auto;
+    top:20%; 
+}
+
+ /*--About us--*/
+  
+.post-about-us{
+	float: center;
+	width: 540px;
+}
+
+.img-about-us{
+	float: right;
+	margin-bottom: 25px; 
+	margin-right: 35px;
+}
+
+
+
+/*--Offers--*/
+.offers{
+	height: 600px;
+	width: 100%;
+}
+ /*-- Gallery carousel--*/
+ 
+#carousel {
+    height: 300px; 
+}
+
+#carousel img {
+    width:35%;
+}	
+
+a.btn {
+    font-size: 16px;
+}
+
+.btn-contact {
+    float: left;
+    margin-left: 50px;
+	width: 200px;
+}
+
+.btn-shop {
+    float: right;
+    margin-right: 50px;
+	width: 200px;
+}
+
+/*--Testimonials--*/
+
+.testimonial-text{
+    width: 280px;
+	font-size: 16px;
+	margin:  10px;
+    padding: 10px;
+}
+
+/*--Contact--*/
+
+.contact-info{
+	width: 280px;
+}
+
+/*--Footer--*/
+
+.social-icon img{
+	margin-left: 85px;
+}
+	
+}
+
+@media (max-width: 600px) {
+	
+	/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 598px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}
+/*--About us--*/
+  
+.post-about-us{
+	float: center;
+	width: 520px;
+	margin-bottom: 25px;
+}
+
+.img-about-us{
+	margin-right: 25px;
+}	
+	
+/*--Testimonials--*/
+
+.testimonial-text{
+    width: 240px;
+	font-size: 15px;
+}	
+	
+/*--Contact--*/
+
+.foto{
+	width: 270px;
+	height: 400px;
+}
+.contact-info{
+	width: 270px;
+	height: 400px;
+}
+
+.contact-info-title{
+	font-size: 14px;
+	
+}
+
+.contact-info-description{
+	font-size: 18px;
+	line-height: 1.2;
+}
+
+/*--Footer--*/
+
+.social-icon img{
+	margin-left: 78px;
+}
+	
+}
+
+@media (max-width: 540px) {
+
+/*--Header--*/
+
+.header-top{
+	display: none;
+}
+
+.container{ 
+	max-width: 538px;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.header-top p {
+    display: none;
+}
+
+ .navbar-brand img{
+	height: 90%;
+ }
+ 
+/*-- Home Page--*/
+
+.hero{
+	height: 500px;
+}
+
+.welcome{
+    font-size: 48px;
+}
+
+/*--About us--*/
+  
+.post-about-us{
+	width: 450px;
+	margin-bottom: 25px;
+}
+
+.img-about-us{
+	margin-right: 15px;
+}	
+
+ /*-- Offers--*/
+
+a.btn {
+    font-size: 14px;
+}
+
+.btn-contact {
+    margin-left: 30px;
+	width: 185px;
+}
+
+.btn-shop {
+    margin-right: 30px;
+	width: 185px;
+}
+
+
+	
+}
+
+@media (max-width: 480px) {
+	
+}
+
+@media (max-width: 320px) {
+	
+}
+
+@media (max-width: 240px) {
+	
+}

@@ -1,0 +1,525 @@
+body,html{
+	width: 100%;		
+	height: 100%;		
+	font-family: 'Arial Bold';
+	margin: 0px auto;
+	font-size: 20px;
+	line-height: 25px;
+	background-color: #fff;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+html{
+	height: 100%;
+}
+
+nav, footer, header, section { display: block ;}
+
+p{
+	color: #000000;	
+	text-indent: 20px;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+  margin-right: 25px;
+  padding-left: 0;
+  float: right;
+  text-align:center;
+}
+
+a{
+	text-decoration: none;
+	display: inline-block;
+    position: relative;
+	color: #23438e;
+}
+
+li a {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+
+li {
+  display: inline-block;
+  margin-left: 25px;
+  padding: 10px;
+  transition: .5s linear;
+}
+
+li a:after {
+  content: "";
+  width: 0;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background: #fff;
+  transition: all 0.5s linear;  
+}
+
+li a:hover:after{
+  width: 100%;
+}
+
+.logged-in .navbar-fixed-top{
+    top: 32px;
+}
+
+/*--Header--*/
+
+.header{
+	width: 100%;
+    height: 120px;
+}
+
+.header-top{
+	background-color: #23438e;
+    width: 100%;
+	height: 40px;
+}
+
+.container{ 
+	margin: 0 auto;
+    max-width: 960px;
+	padding-left: 15px;
+	padding-right: 15px;
+	overflow: hidden;
+}
+
+.info {
+    float: left;
+    margin-right: 50px;
+	display: block;
+	overflow: hidden;
+}
+
+.header-top p {
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+   margin-bottom: 15px;
+    margin-top: 8px;   
+}
+
+.icon{
+	height: 25px;
+    padding:10px;    
+}
+
+.contact-item {
+    float: right;
+}
+
+
+.header-menu{
+	position: fixed;
+	display: block;
+	width: 100%;
+	background-color: transparent;
+   	padding: 10px; 	
+}
+ 
+ .navbar-brand{
+	float: left;
+	height:70px;
+ }
+
+ /*--Menu--*/
+ 
+.hidden-menu {
+  display: block;
+  position: fixed;
+  list-style:none;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 200px;
+  background-color: rgba(35, 67, 142, 1);
+  height: 100%;
+  top: 0px;
+  right: -200px;
+  transition: right .2s;
+  z-index: 2;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.hidden-menu-ticker {
+  display: none;
+}
+
+/*--burger-button--*/
+
+.btn-menu {
+  color: #fff;
+  background-color: #23438e;
+  padding: 5px;
+  position: fixed;
+  right:10px;
+  cursor: pointer;
+  transition: right .23s;
+  z-index: 3;
+  width: 25px;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.btn-menu span {
+  display: block;
+  height: 5px;
+  background-color: #fff;
+  margin: 5px 0 0;
+  transition: all .1s linear .23s;
+  position: relative;
+}
+
+.btn-menu span.first {
+  margin-top: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu {
+  right: 160px;
+}
+
+.hidden-menu-ticker:checked ~ .hidden-menu {
+  right: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.first {
+  -webkit-transform: rotate(45deg);
+  top: 10px;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.second {
+  opacity: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.third {
+  -webkit-transform: rotate(-45deg);
+  top: -10px;
+}
+ 
+/*-- Home Page--*/
+
+.hero{
+	background: url('/wp-content/themes/vetapteka/img/cat-1598437_1920.jpg')fixed 50% 50%;
+	background-position: center;
+height: 800px;
+width: 100%;
+margin-top: -80px;
+overflow: hidden;
+}
+
+.welcome{
+    font-size: 72px;
+    color: #fff;
+    font-family: Georgia;
+	font-style: italic;
+    text-shadow: #23438e 1px 1px 0, 
+				#23438e 2px 2px 0, 
+                 #23438e 3px 3px 0, 
+				 #23438e 4px 4px 0, 
+                 #23438e 5px 5px 0;
+    text-align: center;
+	position: static; 
+	width:100%; 
+	top:70%; 
+}
+
+.logo-image{
+	width: 40%;
+	padding-left: 35%;
+	padding-top: 15%;
+	margin: 0 auto;
+    top:20%; 
+}
+
+/*--About us--*/
+
+.about-us{
+	padding: 50px;
+}
+
+.feature-header {
+    margin: 50px 0px;
+}
+
+.feature-title {
+    position: relative;
+    padding-bottom: 10px;
+    color: #23438e;
+    font-weight: bold;
+    margin: 10px auto;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;    
+}
+
+.feature-title-lite{
+	position:static;
+    padding-bottom: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin: 10px auto;
+    font-size: 40px;
+    line-height: 50px;
+    text-transform: uppercase;
+	 text-shadow: #23438e 1px 1px 0, 
+				#23438e 2px 2px 0, 
+                 #23438e 3px 3px 0; 				 
+}
+
+.feature-title:hover {
+    cursor: pointer;
+}
+  
+ .text-center{
+	text-align:center;
+}
+  
+.post-about-us{
+	float: left;
+	width: 400px;	
+}
+
+.img-about-us{
+	float: right;
+	margin-bottom: 25px; 
+	margin-right: 50px;
+}
+
+/*--Offers--*/
+
+.offers{
+	background: url('/wp-content/themes/vetapteka/img/cow-1417398_1920 - копия.jpg')fixed 50% 50%;
+	background-position: center;
+	height: 800px;
+	width: 100%;
+}
+.offers-image{
+	display: none;
+}
+/*-- Gallery carousel--*/
+
+#carousel {
+    width:100%;
+    height: 400px;
+}
+
+#carousel img {
+    cursor: pointer; 
+    margin-bottom: 50px;
+}
+
+/*--Buttons--*/
+
+a.btn {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px rgba(0,0,0,.3);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(255,255,255, 0.6);
+  box-shadow:
+   inset 0 0 3px 1px rgba(0,0,0,.8),
+   inset rgba(0,0,0,.3) -5px -5px 8px 5px,
+   inset rgba(255,255,255,.5) 5px 5px 8px 5px,
+   1px 1px 1px rgba(255,255,255,.1),
+   -2px -2px 5px rgba(0,0,0,.5);
+  transition: .2s;
+  text-align: center;
+   position: static;
+}
+
+a.btn:hover {
+  color: rgba(255,255,255,.9);
+  background:#23438e;
+  text-transform: uppercase;
+}
+
+a.btn:active {
+  background: #23438e;
+  box-shadow:
+   inset 0 0 5px 3px rgba(0,0,0,.8),
+   inset rgba(0,0,0,.3) -5px -5px 8px 5px,
+   inset rgba(255,255,255,.5) 5px 5px 8px 5px,
+   1px 1px 1px rgba(255,255,255,.2),
+   -2px -2px 5px rgba(0,0,0,.5);
+   text-transform: uppercase;
+}
+
+.btn-contact {
+    float: left;
+    margin-left: 50px;
+	width: 290px;
+}
+
+.btn-shop {
+    float: right;
+    margin-right: 50px;
+	width: 290px;
+}
+
+/*--Testimonials--*/
+
+.testimonials{
+    height: 1600px;
+}
+
+.testimonials-inner{
+	background: #a6a6a6;
+	height: 350px;
+	border-radius: 15px;
+    margin: 20px;
+}
+
+.testimonials-inner-large{
+	height: 630px;
+	background: #a6a6a6;
+	border-radius: 15px;
+    margin: 20px;
+}
+
+.testimonial-person{
+    float:left;
+    margin: 30px;    
+}
+
+.testimonial-foto {
+	border: 5px solid #f6f5f0;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    box-shadow: 0px 0px 3px 3px #23438e;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.testimonial-text{
+	float:  right;
+    width: 520px;
+    font-family: Georgia;
+	font-style: italic;
+    background: #fff;
+    margin:  20px;
+    padding: 10px;
+    border-radius: 10px;
+    padding-left: 15px;
+	position: static; 
+}
+
+.testimonial-text:after{
+    content: "";
+  position: static;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  margin-top: -5px;
+  background: #FFF;
+  -webkit-transform: rotate(45deg);
+   left: -5px;
+  border-right: 0 none;
+  border-bottom: 0 none;
+}
+
+.testimonial-author{
+	font-size: 30px;
+	color: #fff;
+    margin-left: 50px;
+   margin-top: 20px;
+	text-shadow: #23438e 1px 1px 0, 
+				#23438e 2px 2px 0, 
+                 #23438e 3px 3px 0; 
+}
+
+/*--Contact--*/
+
+.contact {
+    background: url('/wp-content/themes/vetapteka/img/chicks-1572367_1920 - копия.jpg') fixed 50% 50%;
+		background-position: center;
+height: 800px;
+width: 100%;
+overflow: hidden;
+}
+
+.foto-image{
+	float: left;
+	margin-bottom:25px; 
+}
+
+.foto{
+	width: auto;
+	height: 550px;
+}
+
+.contact-info{
+	float: right;
+	margin-right: 50px;
+    background-color: rgba(255, 255, 255, 0.75);
+    width: 450px;
+    height: 550px;	    
+}
+
+.contact-info-title{
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	padding: 10px;
+	color:#23438e;	
+}
+
+.contact-info-description{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px;
+	line-height: 1.5;
+	color:#23438e;
+}
+
+.our-location iframe{
+	height: 300px;
+	width: 100%;
+	position: static;
+	overflow: hidden;
+   border: none;
+}
+
+/*--Footer--*/
+
+.footer{
+	background-color: #23438e;
+	width: 100%;
+	height:120px;
+	overflow: hidden;
+}
+
+.social-icon img{
+	width: 50px;
+	float: left;
+	margin-left: 152px;
+	padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.copyright{
+	text-align: center;
+	color: #ffffff;
+	font-size: 20px;
+	padding:10px;
+	top: 80px;
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.footer-text {
+    color: #fff;
+}
