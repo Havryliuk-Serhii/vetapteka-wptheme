@@ -50,7 +50,39 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+	<main class="main">
+			<div class="container">
+				<?php if (have_posts()) :
+				  	while (have_posts()) : the_post(); ?>
+					<article class="post-articles">
+						<div class="post-img">
+							<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
+						</div>
+						<div class="post-content">
+							<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+							<div class="post-head">
+								<span class="post-date"><span><?php the_author(); ?></span> - <?php the_time('j M, Y')?></span>
+								<span class="post-comments"><?php comments_popup_link('немає коментарів', '1 коментр', '% коментарів')?></span>
+							</div>
+							<?php the_excerpt(); ?>
+						<a class="read-more" href="<?php the_permalink() ?>"><?php echo __('Далі', 'vetapteka')?></a>
+						</div>						
+					</article>	
+				<?php endwhile; 
+						else : ?>
+						<p>Записів немає.</p>
+				<?php endif; ?>
+			</div>			
+			<!-- Pagination -->
+			<?php vet_pagination(); ?>
+			<!--
+			<div class="pagination">
+				<a href="#">«</a>
+				<a href="#">1</a>
+				<a class="active" href="#">2</a>
+				<a href="#">3</a>
+				<a href="#">»</a>
+			</div>
+			-->  			
+		</main>
+<?php get_footer();

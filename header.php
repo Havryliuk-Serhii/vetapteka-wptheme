@@ -47,26 +47,23 @@
 			<div class="header-menu"  id="top_nav">
 				<div class="container">
 				   <a class="navbar-brand" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo2.png" alt="logo"></a>	
-                         
-                            <input type="checkbox" id="hmt" class="hidden-menu-ticker">
-                            <label class="btn-menu" for="hmt">
-                                <span class="first"></span>
-                                <span class="second"></span>
-                                <span class="third"></span>
-                            </label>
-                           <?php
-								wp_nav_menu(
+                    <input type="checkbox" id="hmt" class="hidden-menu-ticker">
+                    <label class="btn-menu" for="hmt">
+                    	<span class="first"></span>
+                    	<span class="second"></span>
+                        <span class="third"></span>
+                    </label>
+                    <?php
+						wp_nav_menu(
 									array(
                                         'theme_location' => 'primary',
                                         'container' => 'false',
                                         'container_id'    => '',
 		                                 'menu_class' => 'hidden-menu',
                                         'menu_id'         => '',
-										 )
-								);
-							?>
+									)
+						);
+					?>
                 </div>   		
-				</div>   
-			</div>
-			
+			</div>				
 	    </header>
