@@ -67,3 +67,5 @@
                 </div>   		
 			</div>				
 	    </header>
+		<main class="main">
+			
