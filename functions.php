@@ -247,6 +247,85 @@ function vet_pagination( $args = array() ) {
         echo $args['before_output'] . $echo . $args['after_output'];
 }
 /**
+*  Changing comment form fields
+*/
+add_filter('comment_form_fields', 'vet_reorder_comment_fields' );
+function vet_reorder_comment_fields( $fields ){
+	
+
+	$new_fields = array(); 
+
+	$myorder = array('author','email','comment'); 
+	foreach( $myorder as $key ){
+		$new_fields[ $key ] = $fields[ $key ];
+		unset( $fields[ $key ] );
+	}
+
+	if( $fields )
+		foreach( $fields as $key => $val )
+			$new_fields[ $key ] = $val;
+
+	return $new_fields;
+}
+/**
+*  Comment markup HTML output
+*/
+function vet_list_comment( $comment, $args, $depth ) {
+	if ( 'div' === $args['style'] ) {
+		$tag       = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag       = 'li';
+		$add_below = 'div-comment';
+	}
+	?>
+		<div class="media-heading">
+			<div class="media-img">
+				<?php 
+					echo get_avatar( $comment, 95, '', '', array('class'=>'media-object img-rounded') );
+			 	?>	
+			</div>
+			<?php
+				printf(
+					__( '<h4>%s</h4>' ),
+					get_comment_author()
+				);			
+			?>
+			<?php 
+				printf(
+					__('<h4><span>%1$s</span></h4>'),
+					get_comment_date()
+				);
+			?>
+		</div>		
+		<div class="media-body">
+			
+			<?php if ( $comment->comment_approved == '0' ) { ?>
+			<em class="comment-awaiting-moderation">
+				<?php _e( 'Ваш комментар очікує модерації.' ); ?>
+			</em><br/>
+			<?php } ?>
+			<?php comment_text(); ?>
+		
+			<div class="reply">
+				<?php
+				comment_reply_link(
+					array_merge(
+						$args,
+						array(
+							'add_below' => $add_below,
+							'depth'     => $depth,
+							'max_depth' => $args['max_depth']
+						)
+					)
+				); ?>
+			</div>
+		</div>
+	<?php if ( 'div' != $args['style'] ) { ?>
+	</div>	
+	<?php }
+}
+/**
 * Footer icon
 **/
 register_sidebar(array(
