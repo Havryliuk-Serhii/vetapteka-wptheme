@@ -3,6 +3,12 @@ Theme Name: Vetapteka
 Author: Serhii Havryliuk
 Text Domain: vet
 */
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/

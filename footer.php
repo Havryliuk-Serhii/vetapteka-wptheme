@@ -20,7 +20,7 @@
         <?php endif; ?>    
 			</div>
       <div class="copyright">
-				&copy; Ветеринарна аптека "Чотири лапи"  2016
+				&copy; <a href="<?php echo home_url(); ?>" title="<?php esc_attr( bloginfo('name') ); ?>"><?php bloginfo('name'); ?></a><?php echo date("Y") ?>
       </div>             			
     </div>
   </footer>
