@@ -20,7 +20,7 @@
         <?php endif; ?>    
 			</div>
       <div class="copyright">
-				&copy; <a href="<?php echo home_url(); ?>" title="<?php esc_attr( bloginfo('name') ); ?>"><?php bloginfo('name'); ?></a><?php echo date("Y") ?>
+				&copy;  <a href="<?php echo home_url(); ?>" title="<?php esc_attr( bloginfo('name') ); ?>"><?php bloginfo('name'); ?></a> <?php echo date("Y") ?>
       </div>             			
     </div>
   </footer>
