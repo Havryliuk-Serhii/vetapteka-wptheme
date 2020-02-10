@@ -281,22 +281,10 @@ input#s:focus + .close span.back{
 main{
   width: 100%;
   height: 100%;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  -o-flex-direction: row;
-  flex-direction: row;
   padding-bottom: 120px; 
 }
 /*-- Home Page--*/
 .hero{
-  background: url('img/cat-1598437_1920.jpg')fixed 50% 50%;
-  background-position: center;
   height: 800px;
   width: 100%;
   margin-top: -80px;

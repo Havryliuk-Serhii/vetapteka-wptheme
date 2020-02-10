@@ -174,6 +174,19 @@ function display_vet(){
 	echo "<input type='text' class='regular-text' name='vet_doc' value='" . esc_attr(get_option('vet_doc')) . "'>";
 }
 /**
+* Custom background for section
+**/
+function vetapteka_get_background($field, $cat = null, $center = true, $height = true, $margin = true){
+    if( get_field($field, $cat) ){
+        $add_position = $center ? 'background-position: center;' : '';
+        $add_height = $height ? 'height: 800px;' : '';
+        $add_margin = $margin ? 'margin-top: -80px;' : '';
+        return ' style="background: url(' . get_field($field, $cat) . ') fixed 50% 50%; ' . $add_position .  $add_height . $add_margin . '"';
+    }
+    return null;
+}
+
+/**
 *  Pagination
 **/
 function vet_pagination( $args = array() ) {
