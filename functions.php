@@ -176,12 +176,9 @@ function display_vet(){
 /**
 * Custom background for section
 **/
-function vetapteka_get_background($field, $cat = null, $center = true, $height = true, $margin = true){
+function vetapteka_get_background($field, $cat = null){
     if( get_field($field, $cat) ){
-        $add_position = $center ? 'background-position: center;' : '';
-        $add_height = $height ? 'height: 800px;' : '';
-        $add_margin = $margin ? 'margin-top: -80px;' : '';
-        return ' style="background: url(' . get_field($field, $cat) . ') fixed 50% 50%; ' . $add_position .  $add_height . $add_margin . '"';
+        return ' style="background: url(' . get_field($field, $cat) . ') fixed 50% 50%; "';
     }
     return null;
 }
@@ -311,15 +308,13 @@ function vet_list_comment( $comment, $args, $depth ) {
 				);
 			?>
 		</div>		
-		<div class="media-body">
-			
+		<div class="media-body">			
 			<?php if ( $comment->comment_approved == '0' ) { ?>
 			<em class="comment-awaiting-moderation">
 				<?php _e( 'Ваш комментар очікує модерації.' ); ?>
 			</em><br/>
 			<?php } ?>
-			<?php comment_text(); ?>
-		
+			<?php comment_text(); ?>		
 			<div class="reply">
 				<?php
 				comment_reply_link(
@@ -334,8 +329,7 @@ function vet_list_comment( $comment, $args, $depth ) {
 				); ?>
 			</div>
 		</div>
-	<?php if ( 'div' != $args['style'] ) { ?>
-	</div>	
+	<?php if ( 'div' != $args['style'] ) { ?>	
 	<?php }
 }
 /**
@@ -349,7 +343,6 @@ register_sidebar(array(
 		'after_widget' => ''
 	)
 );
-
 
 /**
 * Slider

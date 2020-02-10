@@ -285,6 +285,7 @@ main{
 }
 /*-- Home Page--*/
 .hero{
+  background-position: center;
   height: 800px;
   width: 100%;
   margin-top: -80px;
@@ -621,6 +622,8 @@ cite{
 /*--Comments--*/
 .comments-title{
   text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 .media-list{
   display: flex;
