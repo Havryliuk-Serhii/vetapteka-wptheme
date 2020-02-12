@@ -156,23 +156,6 @@ function display_phone(){
 	echo "<input type='text' class='regular-text' name='my_phone' value='" . esc_attr(get_option('my_phone')) . "'>";
 }
 
-function vet_options(){
-		add_settings_field(
-		'vet', 
-		'Ветеринарний лікар', 
-		'display_vet',
-		'general' 
-	);
-    
-	register_setting(
-		'general', 
-		'vet_doc' 
-	);
-}
-add_action('admin_init', 'vet_options');
-function display_vet(){
-	echo "<input type='text' class='regular-text' name='vet_doc' value='" . esc_attr(get_option('vet_doc')) . "'>";
-}
 /**
 * Custom background for section
 **/
@@ -398,10 +381,8 @@ register_sidebar(array(
 	)
 );
 
-
-
 /**
-* Twxt widget 
+* Text widget 
 **/
 register_sidebar(array(
 		'name' => 'Віджет текст ',
