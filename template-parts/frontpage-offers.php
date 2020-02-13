@@ -33,10 +33,10 @@
 						  		while ($testimonial_slider->have_posts()) : $testimonial_slider->the_post(); ?> 
                         <div class="testimonials-inner">
                                 <div class="testimonial-foto">
-	                                  <?php the_post_thumbnail(); ?>             
+	                                  <?php the_post_thumbnail('testimonial_thumb'); ?>             
 	                            </div>
 								<h4 class="testimonial-author"><?php the_author(); ?></h4>
-								<p class="testimonial-text">T<?php the_content(); ?></p>								
+								<div class="testimonial-text">T<?php the_content(); ?></div>								
                         </div>
 						<?php endwhile; ?>
 						<?php endif; ?>
