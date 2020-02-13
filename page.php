@@ -1,6 +1,7 @@
 <?php get_header (); ?>
 	<div class="container">
-	<?php while (have_posts()) : the_post(); ?>
+		<div class="page-wrapper">
+			<?php while (have_posts()) : the_post(); ?>
 			<article class="post-articles" id="post-<?php the_ID(); ?>">
 				<div class="post-img">
 					<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
@@ -22,5 +23,6 @@
 				comments_template();
 			?>
 			<?php endif; ?>  
-			<?php endwhile; ?>	 	
+			<?php endwhile; ?>
+		</div>	 	
 <?php get_footer (); ?>			

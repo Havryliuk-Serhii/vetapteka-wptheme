@@ -1,6 +1,7 @@
 <?php get_header(); ?> 
-	<div class="container">   
-	<?php if ( have_posts() ) : ?>
+<div class="container"> 
+	<div class="page-wrapper">  
+		<?php if ( have_posts() ) : ?>
 		<h3>
 			<?php
 				printf( esc_html__( 'Результати пошуку для: %s', 'vetapteka' ), '<span>' . get_search_query() . '</span>' );
@@ -26,7 +27,8 @@
 			<div class="post-navigation">            	
               	<?php the_post_navigation(); ?>  
             </div>
-	<?php else: ?>
+		<?php else: ?>
 			<p>По Вашому запиту нічого не знайдено</p>				
-	<?php endif; ?>
+		<?php endif; ?>
+	</div>
 <?php get_footer (); ?>
