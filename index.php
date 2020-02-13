@@ -28,7 +28,7 @@ get_header(); ?>
 							<span class="post-comments"><?php comments_popup_link('немає коментарів', '1 коментр', '% коментарів')?></span>
 						</div>
 						<?php the_excerpt(); ?>
-						<a class="read-more" href="<?php the_permalink() ?>"><?php echo __('Далі', 'vetapteka')?></a>
+						<a class="read-more" href="<?php the_permalink() ?>"><?php esc_html_e( 'Далі','vetapteka' ) ?></a>
 					</div>						
 				</article>	
 			<?php endwhile; 

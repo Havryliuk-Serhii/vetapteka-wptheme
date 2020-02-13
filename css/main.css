@@ -278,10 +278,7 @@ input#s:focus + .close span.back{
   transform: rotate(-45deg);
   opacity:1;
 }
-main{
-  width: 100%;
-  padding-bottom: 120px; 
-}
+
 /*-- Home Page--*/
 .hero{
   background-position: center;

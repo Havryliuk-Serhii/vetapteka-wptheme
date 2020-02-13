@@ -74,8 +74,8 @@ function vetapteka_scripts() {
 		
 	wp_enqueue_script( 'vetapteka-modernizr', get_template_directory_uri() . '/js/modernizr.custom.js', array(), '20151215',true );
 	wp_enqueue_script( 'vetapteka-jquery',get_template_directory_uri() . '/js/jquery-3.4.1.min.js', array(),'3.4.1' , true );
-   wp_enqueue_script( 'vetapteka-carousel-js',get_template_directory_uri() . '/js/owl.carousel.js', array(), NULL, true );
-   wp_enqueue_script( 'vetapteka--main-js',get_template_directory_uri() . '/js/main.js', array(), NULL, true );
+   	wp_enqueue_script( 'vetapteka-carousel-js',get_template_directory_uri() . '/js/owl.carousel.js', array(), NULL, true );
+   	wp_enqueue_script( 'vetapteka--main-js',get_template_directory_uri() . '/js/main.js', array(), NULL, true );
 }
 add_action( 'wp_enqueue_scripts', 'vetapteka_scripts' );
 
@@ -97,7 +97,15 @@ add_filter('the_generator', '__return_empty_string');
 
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-
+/**
+* Добавление окна поиска в меню
+*/
+add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
+ 
+function add_search_box( $items, $args ) {
+    $items .= '<li>' . get_search_form( false ) . '</li>';
+    return $items;
+}
 
 /**
 * Top header options
@@ -161,7 +169,7 @@ function display_phone(){
 **/
 function vetapteka_get_background($field, $cat = null){
     if( get_field($field, $cat) ){
-        return ' style="background: url(' . get_field($field, $cat) . ') fixed 50% 50%; "';
+       return ' style="background: url(' . get_field($field, $cat) . ') fixed 50% 50%; "';
     }
     return null;
 }
@@ -291,13 +299,15 @@ function vet_list_comment( $comment, $args, $depth ) {
 				);
 			?>
 		</div>		
-		<div class="media-body">			
+		<div class="media-body">
+			
 			<?php if ( $comment->comment_approved == '0' ) { ?>
 			<em class="comment-awaiting-moderation">
 				<?php _e( 'Ваш комментар очікує модерації.' ); ?>
 			</em><br/>
 			<?php } ?>
-			<?php comment_text(); ?>		
+			<?php comment_text(); ?>
+		
 			<div class="reply">
 				<?php
 				comment_reply_link(
@@ -312,7 +322,8 @@ function vet_list_comment( $comment, $args, $depth ) {
 				); ?>
 			</div>
 		</div>
-	<?php if ( 'div' != $args['style'] ) { ?>	
+	<?php if ( 'div' != $args['style'] ) { ?>
+	
 	<?php }
 }
 /**
@@ -326,6 +337,7 @@ register_sidebar(array(
 		'after_widget' => ''
 	)
 );
+
 
 /**
 * Slider
@@ -381,8 +393,10 @@ register_sidebar(array(
 	)
 );
 
+
+
 /**
-* Text widget 
+* Twxt widget 
 **/
 register_sidebar(array(
 		'name' => 'Віджет текст ',
