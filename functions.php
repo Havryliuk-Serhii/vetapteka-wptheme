@@ -46,7 +46,7 @@ function vetapteka_setup() {
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'vetapteka' ),
 	) );
-
+	add_filter( 'nav_menu_css_class', '__return_empty_array' );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -97,8 +97,9 @@ add_filter('the_generator', '__return_empty_string');
 
 remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+
 /**
-* Добавление окна поиска в меню
+* Add search form in menu
 */
 add_filter( 'wp_nav_menu_items','add_search_box', 10, 2 );
  

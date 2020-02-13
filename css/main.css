@@ -34,7 +34,6 @@ li a {
   text-transform: uppercase;
 }
 li {
-  display: inline-block;
   margin-left: 25px;
   padding: 10px;
   transition: .5s linear;
