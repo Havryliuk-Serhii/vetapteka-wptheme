@@ -9,7 +9,7 @@
 				<h2 class="feature-title"><?php esc_html_e( 'Контакти','vetapteka' ) ?></h2>
 			</div>
 			<div class="foto-image">
-				<img class="foto" src="img/аптека.jpg" alt="foto">
+				<img class="foto" src="<?php bloginfo('template_url'); ?>/img/аптека.jpg" alt="foto">
 			</div>
 			<div class="contact-area">
 				<div class="our-location">
@@ -17,21 +17,21 @@
 					</div>
 					<div class="contact-info">
 						<div class="info-bottom">
-							<img class="icon" src="img/map-icon.png " alt=" map icon">
+							<img class="icon" src="<?php bloginfo('template_url'); ?>/img/map-icon.png " alt="map icon">
 							<span class="item-bottom">
-								м.Жмеринка, вул.Б.Хмельницького, буд.13/3
+								<?php echo get_option('my_adress'); ?>
 							</span>
 						</div>
 						<div class="info-bottom">
-							<img class="icon" src="img/time-icon.png" alt="time icon">
+							<img class="icon" src="<?php bloginfo('template_url'); ?>/img/time-icon.png" alt="time icon">
 							<span class="item-bottom">
-								Щоденно  08:00-18:00
+								<?php echo get_option('my_time'); ?>
 							</span>
 						</div>
 						<div class="info-bottom">
-							<img class="icon" src="img/telefone-icon.png" alt="telefone icon">
+							<img class="icon" src="<?php bloginfo('template_url'); ?>/img/telefone-icon.png" alt="telefone icon">
 							<span class="item-bottom">
-								+38(097)000-00-00
+								<?php echo get_option('my_phone'); ?>
 							</span>
 						</div>
 					</div>

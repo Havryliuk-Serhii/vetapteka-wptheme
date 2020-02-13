@@ -339,65 +339,96 @@ register_sidebar(array(
 	)
 );
 
-
 /**
 * Slider
-*/
-register_sidebar(array(
-		'name' => 'Слайдер',
-		'id' => 'carousel_slides',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода зображень',
-		'before_widget' => '',
-		'after_widget' => ''
-	)
-);
-
-/**
-* Widget About
 **/
-register_sidebar(array(
-		'name' => 'Віджет Мета ',
-		'id' => 'abouttext_widget',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода ',
-		'before_widget' => '',
-		'after_widget' => ''
-	)
-);
+function slider_posts(){  
+	$labels = array(  
+		'name' => 'Слайдери', 
+		'singular_name' => 'Слайдер', 
+		'add_new' => 'Додати новий',  
+		'add_new_item' => 'Додати новий слайдер',  
+		'edit_item' => 'Редагувати слайдер',  
+		'new_item' => 'Новий слайдер',  
+		'view_item' => 'Подивитись слайдер',  
+		'search_items' => 'Знайти слайдер',  
+		'not_found' =>  'Слайдер не знайдено',  
+		'not_found_in_trash' => 'В корзині слайдера не знайдено',  
+		'parent_item_colon' => '',  
+		'menu_name' => 'Слайдери'  
+	);  
+	$args = array(  
+		'labels' => $labels,  
+		'public' => true,  
+		'publicly_queryable' => true,  
+		'show_ui' => true,  
+		'show_in_menu' => true,  
+		'query_var' => true,  
+		'rewrite' => true,  
+		'capability_type' => 'post',  
+		'has_archive' => true,  
+		'hierarchical' => false,  
+		'menu_position' => 40, 
+		'menu_icon' => 'dashicons-images-alt' ,
+		'supports' => array('title', 'thumbnail')  
+	);  
+	register_post_type('slider', $args);  
+}
+add_action('init', 'slider_posts');
 
 /**
 * Testimonial
 **/
- register_sidebar(array(
-		'name' => 'Віджет Відгук 1',
-		'id' => 'testimonial_widget1',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода ',
-		 'before_widget' => '<div class="testimonial-text">',
-    'after_widget' => '</div>',
-     
-	)
-);
-register_sidebar(array(
-		'name' => 'Віджет Відгук 2',
-		'id' => 'testimonial_widget2',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода ',
-		 'before_widget' => '<div class="testimonial-text">',
-    'after_widget' => '</div>',
-     
-	)
-);register_sidebar(array(
-		'name' => 'Віджет Відгук 3',
-		'id' => 'testimonial_widget3',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода ',
-		 'before_widget' => '<div class="testimonial-text">',
-    'after_widget' => '</div>',
-     
-	)
-);
+function testimonial_posts(){  
+	$labels = array(  
+		'name' => 'Відгуки', 
+		'singular_name' => 'Відгук', 
+		'add_new' => 'Додати новий',  
+		'add_new_item' => 'Додати новий відгук',  
+		'edit_item' => 'Редагувати відгук',  
+		'new_item' => 'Новий відгук',  
+		'view_item' => 'Подивитись відгук',  
+		'search_items' => 'Знайти відгук',  
+		'not_found' =>  'Відгук не знайдено',  
+		'not_found_in_trash' => 'В корзині відгука не знайдено',  
+		'parent_item_colon' => '',  
+		'menu_name' => 'Відгуки'  
+	);  
+	$args = array(  
+		'labels' => __( $labels, 'vetapteka' ),  
+		'public' => true,  
+		'publicly_queryable' => true,  
+		'show_ui' => true,  
+		'show_in_menu' => true,  
+		'query_var' => true,  
+		'rewrite' => true,  
+		'capability_type' => 'post',  
+		'has_archive' => true,  
+		'hierarchical' => false,  
+		'menu_position' => 55,
+		'menu_icon' => 'dashicons-id' ,
+		'supports' => array('title', 'editor', 'author', 'thumbnail'),
+		'taxonomies' => array( 'category' ),  
+	);  
+	register_post_type('testimonial_slider', $args);  
+}
+add_action('init', 'testimonial_posts');
 
-
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if( is_category() ) {
+    $post_type = get_query_var('post_type');
+    if($post_type)
+        $post_type = $post_type;
+    else
+        $post_type = array('nav_menu_item', 'post',  $labels); 
+    $query->set('post_type',$post_type);
+    return $query;
+    }
+}
 
 /**
-* Twxt widget 
+* Text widget 
 **/
 register_sidebar(array(
 		'name' => 'Віджет текст ',

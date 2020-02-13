@@ -7,54 +7,39 @@
 <div class="offers" id="offers" <?php echo vetapteka_get_background('offers_bg'); ?>>
 			<div class="container">
 				<div class="feature-header-lite text-center">
-					<h2 class="feature-title">Пропонуємо</h2>
+					<h2 class="feature-title"><?php esc_html_e( 'Пропонуємо','vetapteka' ) ?></h2>
 				</div>
 				<div id="captioned-gallery">
+					<?php $slider = new WP_Query( array('post_type' => 'slider','posts_per_page' => 5, 'order' => 'ASC') ); ?>
 					<figure class="slider">
-						<figure>
-							<img src="img/1.jpg" alt="Image 1">
-						</figure>
-						<figure>
-							<img src="img/2.jpg" alt="Image 2">
-						</figure>
-						<figure>
-							<img src="img/3.jpg" alt="Image 3">
-						</figure>
-						<figure>
-							<img src="img/4.jpg" alt="Image 4">
-						</figure>
-						<figure>
-							<img src="img/5.jpg" alt="Image 5">
-						</figure>
+						<?php if ($slider->have_posts()) :
+						  	while ($slider->have_posts()) : $slider->the_post(); ?>
+				  			<figure>
+								<?php the_post_thumbnail(); ?>
+							</figure>
+							<?php endwhile; ?>
+						<?php endif; ?>	
 					</figure>
 				</div>
 				<div class="testimonials">
                     <div class="feature-header-lite text-center">
-                        <h2 class="feature-title">Відгуки</h2>
+                        <h2 class="feature-title"><?php esc_html_e( 'Відгуки','vetapteka' ) ?></h2>
                     </div>
                      <!--  Carousel start -->
                     <div  class="owl-carousel owl-theme">
-                        <div class="testimonials-inner"> 
-                            <div class="testimonial-foto">
-                                <img src="img/фото-1.jpg"  alt="Client Image">               
-                            </div>
-							<h4 class="testimonial-author">John Doe</h4>
-							<p class="testimonial-text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit..</p>
-                        </div> <!-- ITEM END -->
-						<div class="testimonials-inner"> 
-                            <div class="testimonial-foto ">
-                            	<img src="img/фото-2.jpg"  alt="Client Image">           
-                            </div>
-							<h4 class="testimonial-author">John Doe</h4>
-							<p class="testimonial-text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit..</p>
-                        </div> <!-- ITEM END -->
-						<div class="testimonials-inner"> 
-                            <div class="testimonial-foto ">
-                                <img src="img/фото-3.jpg"  alt="Client Image" >
-                            </div>
-							<h4 class="testimonial-author">John Doe</h4>
-							<p class="testimonial-text">This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit..</p>
-                        </div> <!-- ITEM END -->
+                    	<?php
+                    	 $testimonial_slider = new WP_Query( array('post_type' => 'testimonial_slider','posts_per_page' => 3, 'order' => 'ASC') ); ?>
+                    	<?php if ($testimonial_slider->have_posts()) :
+						  		while ($testimonial_slider->have_posts()) : $testimonial_slider->the_post(); ?> 
+                        <div class="testimonials-inner">
+                                <div class="testimonial-foto">
+	                                  <?php the_post_thumbnail(); ?>             
+	                            </div>
+								<h4 class="testimonial-author"><?php the_author(); ?></h4>
+								<p class="testimonial-text">T<?php the_content(); ?></p>								
+                        </div>
+						<?php endwhile; ?>
+						<?php endif; ?>
 					</div>	
 				</div>
 			</div>
