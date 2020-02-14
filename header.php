@@ -27,6 +27,13 @@
 	<!--[if lt IE 8]>
    <p class="browsehappy">Ваш браузер <strong>устарел</strong>.Пожалуйста <a href="http://browsehappy.com/">обновите</a>его.</p>
    <![endif]-->
+   <!-- PRELOADER -->
+	<div id="p_prldr">
+		<div class="contpre">
+			<span class="svg_anm"></span>
+		</div>
+	</div>
+<!-- END PRELOADER -->
   	    <header class="header">
 			<div class="header-top">
 				<div class="container">
