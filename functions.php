@@ -331,14 +331,76 @@ function vet_list_comment( $comment, $args, $depth ) {
 /**
 * Footer icon
 **/
-register_sidebar(array(
-		'name' => 'Іконки в футері',
-		'id' => 'icons_footer',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода іконок',
-		'before_widget' => '',
-		'after_widget' => ''
-	)
-);
+function vk_icon_options(){
+		add_settings_field(
+		'vk', 
+		'Вконтакті', 
+		'display_vk_icon',
+		'general' 
+	);
+    
+	register_setting(
+		'general', 
+		'vk_icon' 
+	);
+}
+add_action('admin_init', 'vk_icon_options');
+function display_vk_icon(){
+	echo "<input type='text' class='regular-text' name='vk_icon' value='" . esc_attr(get_option('vk_icon')) . "'>";
+}
+
+function ok_icon_options(){
+		add_settings_field(
+		'ok', 
+		'Однокласники', 
+		'display_ok_icon',
+		'general' 
+	);
+    
+	register_setting(
+		'general', 
+		'ok_icon' 
+	);
+}
+add_action('admin_init', 'ok_icon_options');
+function display_ok_icon(){
+	echo "<input type='text' class='regular-text' name='ok_icon' value='" . esc_attr(get_option('ok_icon')) . "'>";
+}
+
+function fb_icon_options(){
+		add_settings_field(
+		'fb', 
+		'Facebook', 
+		'display_fb_icon',
+		'general' 
+	);
+    
+	register_setting(
+		'general', 
+		'fb_icon' 
+	);
+}
+add_action('admin_init', 'fb_icon_options');
+function display_fb_icon(){
+	echo "<input type='text' class='regular-text' name='fb_icon' value='" . esc_attr(get_option('fb_icon')) . "'>";
+}
+function gp_icon_options(){
+		add_settings_field(
+		'gp', 
+		'Google+', 
+		'display_gp_icon',
+		'general' 
+	);
+    
+	register_setting(
+		'general', 
+		'gp_icon' 
+	);
+}
+add_action('admin_init', 'gp_icon_options');
+function display_gp_icon(){
+	echo "<input type='text' class='regular-text' name='gp_icon' value='" . esc_attr(get_option('gp_icon')) . "'>";
+}
 
 /**
 * Slider
@@ -428,17 +490,6 @@ function query_post_type($query) {
     }
 }
 
-/**
-* Text widget 
-**/
-register_sidebar(array(
-		'name' => 'Віджет текст ',
-		'id' => 'text_widget',
-		'description' => 'Використовуйте віджет Текст для додавання HTML-кода ',
-		'before_widget' => '',
-		'after_widget' => ''
-	)
-);
 /**
 * Widget Google maps
 **/
