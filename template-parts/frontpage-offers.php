@@ -18,7 +18,7 @@
 								<?php the_post_thumbnail(); ?>
 							</figure>
 							<?php endwhile; ?>
-						<?php endif; ?>	
+						<?php endif; wp_reset_query(); ?>	
 					</figure>
 				</div>
 				<div class="testimonials">
@@ -36,10 +36,12 @@
 	                                  <?php the_post_thumbnail('testimonial_thumb'); ?>             
 	                            </div>
 								<h4 class="testimonial-author"><?php the_author(); ?></h4>
-								<div class="testimonial-text">T<?php the_content(); ?></div>								
+								<div class="testimonial-text"><?php the_content(); ?></div>								
                         </div>
 						<?php endwhile; ?>
-						<?php endif; ?>
+						<?php endif;
+								wp_reset_query();
+						?>
 					</div>	
 				</div>
 			</div>

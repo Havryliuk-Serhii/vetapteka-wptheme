@@ -5,10 +5,10 @@
 			<h1 class="welcome"><?php bloginfo('description'); ?></h1>
 		</div>
 	</div>
-	<?php 
-		get_template_part( 'template-parts/frontpage' , 'about' );
-		get_template_part( 'template-parts/frontpage' , 'offers' );
-		get_template_part( 'template-parts/frontpage' , 'blog' );
-		get_template_part( 'template-parts/frontpage' , 'contacts' );
- 	?>
+<?php 
+	get_template_part( 'template-parts/frontpage' , 'about' );
+	get_template_part( 'template-parts/frontpage' , 'offers' );
+	get_template_part( 'template-parts/frontpage' , 'blog' );
+	get_template_part( 'template-parts/frontpage' , 'contacts' );
+ ?>
 <?php get_footer()?>

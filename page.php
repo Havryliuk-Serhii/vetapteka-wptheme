@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="page-wrapper">
 			<?php while (have_posts()) : the_post(); ?>
-			<article class="post-articles" id="post-<?php the_ID(); ?>">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('post-articles'); ?>>
 				<div class="post-img">
 					<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
 				</div>

@@ -17,7 +17,7 @@ get_header(); ?>
 		<div class="page-wrapper">
 			<?php if (have_posts()) :
 			while (have_posts()) : the_post(); ?>
-				<article class="post-articles">
+				<article id="post-<?php the_ID(); ?>" <?php post_class('post-articles'); ?>>
 					<div class="post-img">
 						<a href="<?php the_permalink() ?>"><?php the_post_thumbnail(); ?></a>
 					</div>
@@ -33,7 +33,7 @@ get_header(); ?>
 				</article>	
 			<?php endwhile; 
 					else : ?>
-						<p>Записів немає.</p>
+						<p><?php esc_html_e('Записів немає','vetapteka' ) ?></p>
 			<?php endif; ?>					
 			<!-- Pagination -->
 			<?php vet_pagination(); ?>

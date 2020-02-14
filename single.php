@@ -2,7 +2,7 @@
 <div class="container">
 	<?php if (have_posts()) :
 		while (have_posts()) : the_post(); ?>
-		<article class="single-articles" id="post-<?php the_ID(); ?>">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('single-articles'); ?>>
 			<h3><?php the_title(); ?></h3>
 			<div class="single-post-head">
 				<span class="post-date"><span><?php the_author() ?></span> - <?php the_time('j M, Y')?></span>
@@ -26,4 +26,4 @@
 		<?php endwhile; ?>
 	<?php endif; ?>
 		
-<?php get_footer (); ?>						
+<?php get_footer (); ?>	

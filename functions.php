@@ -440,7 +440,7 @@ function slider_posts(){
 add_action('init', 'slider_posts');
 
 /**
-* Testimonial
+* Testimonials slider
 **/
 function testimonial_posts(){  
 	$labels = array(  

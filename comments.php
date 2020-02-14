@@ -1,22 +1,27 @@
+ 
 <div class="comments">
 			<?php if ( post_password_required() ) : ?>
 				<p class="nopassword"><?php _e( 'Цей пост захищено паролем. Введіть пароль щоб подивитися коментарі.', 'vetapteka' ); ?></p>
+
 			<?php
 					return;
 				endif;
 			?>
+
 			<?php if ( have_comments() ) : ?>
-					<h3 class="comments-title"> <?php _e('Коментарі','vetapteka')?></h3>
+						<h3 class="comments-title"> <?php _e('Коментарі','vetapteka')?></h3>
+
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 						<div class="navigation">
 							<div class="nav-previous"><?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Старі коментарі', 'sd' ) ); ?></div>
 							<div class="nav-next"><?php next_comments_link( __( 'Нові коментарі <span class="meta-nav">&rarr;</span>', 'vetapteka' ) ); ?></div>
 						</div> <!-- .navigation -->
 			<?php endif; // check for comment navigation ?>
+
 			<div class="media-list">
                	<?php
 					wp_list_comments(array(
-						'callback' => 'vet_list_comment',
+							'callback' => 'vet_list_comment',
 					));
 				?>	                            
             </div>  
