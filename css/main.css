@@ -490,6 +490,7 @@ a.btn:active {
 .post-head{
   padding: 10px 5px;
   font-size: 14px;
+  margin: 10px 5px;
 }
 .post-date{
   float: left;
@@ -616,6 +617,23 @@ blockquote>p{
 }
 cite{
   font-style: normal;
+}
+.nav-links{
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  -o-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-between;
+  color:  #23438e;
+}
+.nav-links a:visited{
+  color: #23438e;
 }
 /*--Comments--*/
 .comments-title{
